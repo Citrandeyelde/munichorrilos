@@ -47,6 +47,6 @@ public class HorarioController {
     public String editarArea(@PathVariable Integer id, Model model) {
         Horario horario= horarioService.obtenerHorario(id);
         model.addAttribute("horarios", horario);
-        return "area/editarArea";  // nombre de la vista (archivo HTML)
+        return "horario/editarHorario";  // nombre de la vista (archivo HTML)
     }
 }

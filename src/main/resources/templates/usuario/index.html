@@ -15,16 +15,24 @@
     </tr>
     <tr>
         <td>Id</td>
-        <td>NomDeposito</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
         <td>Direccion</td>
+        <td>Telefono</td>
+        <td>Email</td>
+        <td>Contraseña</td>
         <td>Acciones</td>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="depositos:${depositos}">
-        <td th:text="${depositos.idDeposito}"></td>
-        <td th:text="${depositos.nomDeposito}"></td>
-        <td th:text="${depositos.direccion}"></td>
+    <tr th:each="usuario:${usuarios}">
+        <td th:text="${usuario.idUsuario}"></td>
+        <td th:text="${usuario.nombreU}"></td>
+        <td th:text="${usuario.apellidoU}"></td>
+        <td th:text="${usuario.direccion}"></td>
+        <td th:text="${usuario.telefono}"></td>
+        <td th:text="${usuario.email}"></td>
+        <td th:text="${usuario.contraseña}"></td>
         <td>
             <a class="btn btn-danger" >Editar</a>
             <a class="btn btn-warning">Eliminar</a>
