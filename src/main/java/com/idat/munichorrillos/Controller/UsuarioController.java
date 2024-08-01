@@ -45,8 +45,8 @@ public class UsuarioController {
 
     @GetMapping("/editar/{id}")
     public String editarArea(@PathVariable Integer id, Model model) {
-        Horario horario= horarioService.obtenerHorario(id);
-        model.addAttribute("horarios", horario);
-        return "area/editarArea";  // nombre de la vista (archivo HTML)
+        Usuario usuario= usuarioService.obtenerUsuario(id);
+        model.addAttribute("usuarios", usuario);
+        return "/usuario/editarUsuario";  // nombre de la vista (archivo HTML)
     }
 }
