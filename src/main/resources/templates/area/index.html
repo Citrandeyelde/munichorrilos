@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Listar Areas</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+        <tr>
+            <td><h1>LISTA DE AREAS</h1></td>
+            <td></td>
+            <td><a class="btn btn-primary" th:href="@{/area/agregar}">Agregar</a></td>
+        </tr>
+        <tr>
+            <td>Id</td>
+            <td>Nombre Area</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="area:${areas}">
+            <td th:text="${area.Id_Area}"></td>
+            <td th:text="${area.Nom_Area}"></td>
+            <td>
+                <a class="btn btn-danger" th:href="@{/area/editar/{id}(id=${area.Id_Area})}">Editar</a>
+                <a class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

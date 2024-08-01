@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<table class="table">
+    <thead>
+    <tr>
+        <td><h1>Lista de Vehiculos Municipales</h1></td>
+        <td></td>
+        <td><a class="btn btn-primary">Agregar</a></td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>Placa</td>
+        <td>Marca</td>
+        <td>Modelo</td>
+        <td>NumeroMotor</td>
+        <td>Año</td>
+        <td>Color</td>
+        <td>Estado</td>
+        <td>Personal</td>
+        <td>Acciones</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vmunicipal:${vmunicipals}">
+        <td th:text="${vmunicipal.idVehiculoMunicipal}"></td>
+        <td th:text="${vmunicipal.placa}"></td>
+        <td th:text="${vmunicipal.marca}"></td>
+        <td th:text="${vmunicipal.modelo}"></td>
+        <td th:text="${vmunicipal.nMotor}"></td>
+        <td th:text="${vmunicipal.año}"></td>
+        <td th:text="${vmunicipal.color}"></td>
+        <td th:text="${vmunicipal.estado}"></td>
+        <td th:text="${vmunicipal.personal.empleado.Nom_Empleado}"></td>
+        <td>
+            <a class="btn btn-danger" >Editar</a>
+            <a class="btn btn-warning">Eliminar</a>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>

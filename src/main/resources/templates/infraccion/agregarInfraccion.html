@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Agregar Infraccion</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<form action="#" th:action="@{/infraccion/guardarInfraccion}" th:object="${infracciones}" method="post">
+    <label>Nom_Infraccion: <input type="text" th:field="*{Nom_Infraccion}" /></label><br/>
+    <label>Descripcion: <input type="text" th:field="*{Descripcion}" /></label><br/>
+    <label>Resolucion: <input type="text" th:field="*{Resolucion}" /></label><br/>
+    <label>Rango: <input type="text" th:field="*{Rango}" /></label><br/>
+    <label>Monto: <input type="text" th:field="*{Monto}" /></label><br/>
+    <input type="submit" value="Guardar" />
+</form>
+
+</body>
+</html>

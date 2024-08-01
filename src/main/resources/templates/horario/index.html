@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<table class="table">
+    <thead>
+    <tr>
+        <td colspan="6"><h1>Lista de Depositos</h1></td>
+        <td></td>
+        <td><a class="btn btn-primary">Agregar</a></td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>NomDeposito</td>
+        <td>Direccion</td>
+        <td>Acciones</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="depositos:${depositos}">
+        <td th:text="${depositos.idDeposito}"></td>
+        <td th:text="${depositos.nomDeposito}"></td>
+        <td th:text="${depositos.direccion}"></td>
+        <td>
+            <a class="btn btn-danger" >Editar</a>
+            <a class="btn btn-warning">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+
