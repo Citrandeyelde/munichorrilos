@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Agregar Areas</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<h1>Agregar Persona</h1>
+<form action="#" th:action="@{/area/guardarArea}" th:object="${areas}" method="post">
+    <label>Nombre Area: <input type="text" th:field="*{Nom_Area}" /></label><br/>
+    <input type="submit" value="Guardar" />
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}" >
+    <meta charset="UTF-8">
+    <title>Listar Empleados</title>
+</head>>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+        <tr>
+            <td><h1>LISTA DE AREAS</h1></td>
+            <td></td>
+            <td><a class="btn btn-primary">Agregar</a></td>
+        </tr>
+        <tr>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+            <td>Id</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="listempleado:${listempleado}">
+            <td th:text="${listempleado.Id_Empleado}"></td>
+            <td th:text="${listempleado.Nom_Empleado}"></td>
+            <td th:text="${listempleado.ApellidoP}"></td>
+            <td th:text="${listempleado.Id_Area}"></td>
+            <td th:text="${listempleado.Nom_Area}"></td>
+            <td th:text="${listempleado.HIngreso}"></td>
+            <td th:text="${listempleado.HSalida}"></td>
+            <td th:text="${listempleado.NroIdentidad}"></td>
+            <td th:text="${listempleado.Descripcion}"></td>
+            <td>
+                <a class="btn btn-danger" >Editar</a>
+                <a class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

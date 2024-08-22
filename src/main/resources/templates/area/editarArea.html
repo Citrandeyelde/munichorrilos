@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <title>Editar Area</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="container">
+    <table class="table-primary table-borderless m-4">
+        <thead class="m-4">
+        <h4><p><em>Editar Area</em></p></h4>
+        </thead>
+        <tbody>
+        <form class="form" action="#" th:action="@{/area/guardarArea}" th:object="${areas}" method="post">
+            <tr>
+                <td>
+                <input type="hidden" th:field="*{Id_Area}" />
+                <label>Nom_Area: <input type="text" th:field="*{Nom_Area}" /></label><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+            <input class="btn btn-primary" type="submit" value="Guardar Cambios" />
+                </td>
+            </tr>
+        </form>
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>

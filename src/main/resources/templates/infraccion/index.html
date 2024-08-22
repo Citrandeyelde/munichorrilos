@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Listar Infraccion</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+        <tr>
+            <td><h1>LISTA DE INFRACCIONES</h1></td>
+            <td></td>
+            <td><a class="btn btn-primary" th:href="@{/infraccion/agregar}">Agregar</a></td>
+        </tr>
+        <tr>
+            <td>Id_Infraccion</td>
+            <td>Nom_Infraccion</td>
+            <td>Descripcion</td>
+            <td>Resolucion</td>
+            <td>Rango</td>
+            <td>Monto</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="infraccion:${infracciones}">
+            <td th:text="${infraccion.Id_Infraccion}"></td>
+            <td th:text="${infraccion.Nom_Infraccion}"></td>
+            <td th:text="${infraccion.Descripcion}"></td>
+            <td th:text="${infraccion.Descripcion}"></td>
+            <td th:text="${infraccion.Resolucion}"></td>
+            <td th:text="${infraccion.Rango}"></td>
+            <td th:text="${infraccion.Monto}"></td>
+            <td>
+                <a class="btn btn-danger" th:href="@{/infraccion/editar/{id}(id=${infraccion.Id_Infraccion})}">Editar</a>
+                <a class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
